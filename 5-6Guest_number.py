@@ -7,7 +7,7 @@ sucess = 0  #猜中时的论数
 while again == 'Y':
     com = random.randint(1,100)
     count +=1
-    print('\n\nI already choose 1 number which is between 1 to 100,\nYou have 10 chances to guess that number.')
+    print('\n\nI already choose 1 number which is between 1 to 99,\nYou have 10 chances to guess that number.')
     print('You are currently play this game for %d time.'%count)
     for i in range(1,11):
         if i < 10:
