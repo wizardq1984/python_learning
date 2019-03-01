@@ -1,10 +1,13 @@
 import random
 import string
+
+
 def coupletter():
     letter_list = [x for x in string.ascii_letters]
     random.shuffle(letter_list)
     coup = ''.join(letter_list[:8])
     return coup
+
 
 couplist = []
 while len(couplist) < 200:

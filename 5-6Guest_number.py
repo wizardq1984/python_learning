@@ -7,7 +7,6 @@ with open('e:/github/python_learning/guess_score.txt') as scores:
             line = line.replace('\n', '')  # remove \n from every lines
         line = line.split(' ')
         score_db[line[0]] = line[1:]
-    print(score_db)  # test output score_db
 
 times_db = {}
 with open('e:/github/python_learning/guess_times.txt') as times:
@@ -16,59 +15,94 @@ with open('e:/github/python_learning/guess_times.txt') as times:
             user_time = user_time.replace('\n', '')  # remove \n from every lines
         user_time = user_time.split(' ')
         times_db[user_time[0]] = user_time[1:]
-    print(times_db)  # test output times_db
 
-user_name = input('Please input your name:')
+print('Welcome! This is a simple guess number game.')
+user_name = input('Input your name to start(only english allowed):')
+user_score_list = []
 if user_name not in score_db:   # if user name  not in file create data 0, 0, 0
-    score_db[user_name] = [0, 0, 0]
-min_time = int(score_db[user_name][0])
-avg_time = float(score_db[user_name][1])
-total_time = int(score_db[user_name][2])
+    score_db[user_name] = ['10', '0', '0']
+user_score_list = score_db[user_name]
+min_time = int(user_score_list[0])
+avg_time = float(user_score_list[1])
+total_time = int(user_score_list[2])
 
+
+user_time_list = []
 if user_name not in times_db:    # if user name not in times.txt create empty list
     times_db[user_name] = []
-current_time = 0
+user_time_list = times_db[user_name]
 
 
 def ave_list(str_list):
     sum = 0
-    for i in str_list:
-        sum += int(i)
-    ave = sum/len(str_list)
+    if len(str_list) == 0:  # in case of new user's time list is empty
+        ave = 0
+    else:
+        for i in str_list:
+            sum += int(i)
+        ave = sum/len(str_list)
     return ave
 
 
-again = 'Y'
-while again == 'Y':
+def list_min(str_list):
+    min_list = []
+    for i in str_list:
+        min_list.append(int(i))
+    return min(min_list)
+
+
+again = 'y'
+while again == 'y':
     com = random.randint(1, 100)
-    current_time += 1
-    ave_time = ave_list(times_db[user_name])
-    print('\n\nI already choose 1 number which is between 1 to 99,\nYou have 10 chances to guess that number.')
+    current_time = 0
+    total_time += 1
+    ave_time = ave_list(user_time_list)
+    print(com)
+    print('\n\nI already choose 1 number which is between 1 to 99,\nYou have 8 chances to guess that number.')
     print('You are play this game for total %d time.' % total_time)
     print('Your average success time is %.2f and shortest success time is %d.' % (ave_time, min_time))
-    for i in range(1, 11):
-        if i < 10:
+    for i in range(1, 9):
+        if i < 8:
             ans = eval(input('Guess what i think:'))
             if ans < com:
                 print('The number is too small.')
-                print('You already try for %d times,%d times remaining.' % (i, 10-i))
+                print('You already try for %d times,%d times remaining.' % (i, 8-i))
             elif ans > com:
                 print('The number is too big.')
-                print('You already try for %d times,%d times remaining.' % (i, 10-i))
+                print('You already try for %d times,%d times remaining.' % (i, 8-i))
             else:
                 print('You are right!\n')
                 current_time = i
-                times_db[user_name] = times_db[user_name].append(current_time)
+                user_time_list.append(str(current_time))
+                user_score_list[0] = str(list_min(user_time_list))
+                user_score_list[1] = str(ave_time)
+                user_score_list[2] = str(total_time)
                 break
-        elif i == 10:
+        else:
             ans = eval(input('This is your last chance!\nGuess what i think:'))
             if ans == com:
                 print('You are right!\n')
                 current_time = i
+                user_time_list.append(str(current_time))
+                user_score_list[0] = str(list_min(user_time_list))
+                user_score_list[1] = str(ave_time)
+                user_score_list[2] = str(total_time)
             else:
-                print('10 times running out, game is over.My number is %d.\n' % com)
-            
-        else:
-            print('10 times running out, game is over.My number is %d.\n' % com)
-    print('Your average success time is %.2f.' % (success/count))
-    again = input('Do you want to start again?(Y or N):')
+                print('8 times running out, game is over.My number is %d.\n' % com)
+                user_score_list[2] = str(total_time)
+    score_db[user_name] = user_score_list
+    times_db[user_name] = user_time_list
+    again = input('%s, Do you want to try again?(Y or N):' % user_name)
+
+
+# output all result to txt file.
+score_final = ''
+times_final = ''
+for name in score_db:
+    score_final += name + ' ' + ' '.join(score_db[name]) + '\n'
+for names in times_db:
+    times_final += names + ' ' + ' '.join(times_db[names]) + '\n'
+with open('e:/github/python_learning/guess_score.txt', 'w') as score_result:
+    score_result.write(score_final)
+with open('e:/github/python_learning/guess_times.txt', 'w') as times_result:
+    times_result.write(times_final)
