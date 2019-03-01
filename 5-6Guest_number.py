@@ -57,7 +57,6 @@ while again == 'y':
     current_time = 0
     total_time += 1
     ave_time = ave_list(user_time_list)
-    print(com)
     print('\n\nI already choose 1 number which is between 1 to 99,\nYou have 8 chances to guess that number.')
     print('You are play this game for total %d time.' % total_time)
     print('Your average success time is %.2f and shortest success time is %d.' % (ave_time, min_time))
