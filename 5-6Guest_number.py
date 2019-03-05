@@ -91,7 +91,7 @@ while again == 'y':
                 user_score_list[2] = str(total_time)
     score_db[user_name] = user_score_list
     times_db[user_name] = user_time_list
-    again = input('%s, Do you want to try again?(Y or N):' % user_name)
+    again = input('%s, Do you want to try again?(Y or N):' % user_name).lower()
 
 
 # output all result to txt file.
