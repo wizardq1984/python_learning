@@ -15,7 +15,3 @@ print(city + ' 今天:%s 天气：%s' % (today, weather_type))
 print('最高气温:%s 最低气温：%s' % (high_temp, low_temp))
 print('风向：%s, 风力：%s' % (wind, wind_stre))
 print('本周%s' % weather_tips)
-
-
-
-
