@@ -1,7 +1,7 @@
 import random
 
 score_db = {}
-with open('e:/github/python_learning/guess_score.txt') as scores:
+with open('e:/github/python_learning/txt/guess_score.txt') as scores:
     for line in scores.readlines():
         if line[-1] == '\n':
             line = line.replace('\n', '')  # remove \n from every lines
@@ -9,7 +9,7 @@ with open('e:/github/python_learning/guess_score.txt') as scores:
         score_db[line[0]] = line[1:]
 
 times_db = {}
-with open('e:/github/python_learning/guess_times.txt') as times:
+with open('e:/github/python_learning/txt/guess_times.txt') as times:
     for user_time in times.readlines():
         if user_time[-1] == '\n':
             user_time = user_time.replace('\n', '')  # remove \n from every lines
@@ -101,7 +101,7 @@ for name in score_db:
     score_final += name + ' ' + ' '.join(score_db[name]) + '\n'
 for names in times_db:
     times_final += names + ' ' + ' '.join(times_db[names]) + '\n'
-with open('e:/github/python_learning/guess_score.txt', 'w') as score_result:
+with open('e:/github/python_learning/txt/guess_score.txt', 'w') as score_result:
     score_result.write(score_final)
-with open('e:/github/python_learning/guess_times.txt', 'w') as times_result:
+with open('e:/github/python_learning/txt/guess_times.txt', 'w') as times_result:
     times_result.write(times_final)

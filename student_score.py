@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-with open('e:/GitHub/python_learning/student_score.txt') as scores:
+with open('e:/GitHub/python_learning/txt/student_score.txt') as scores:
     ori_score = []
     for line in scores.readlines():
         if line[-1] == '\n':
