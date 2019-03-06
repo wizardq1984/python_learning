@@ -18,7 +18,7 @@ def ave_score(score_list):
     sum_scores = 0
     for i in score_list:
         sum_scores += int(i)
-    ave_scores = sum_scores/len(score_list)
+    ave_scores = round(sum_scores/len(score_list), 1)
     score_list.append(str(sum_scores))
     score_list.append(str(ave_scores))
     score_list.insert(0, name)
@@ -28,7 +28,7 @@ def ave_score(score_list):
 result_score = []
 for single_score in ori_score:
     result_score.append(ave_score(single_score))
+print(result_score)
 
 ave_single_score = []
-
-print(result_score)
+ave_single_score[0] = '平均'

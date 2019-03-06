@@ -53,7 +53,7 @@ def list_min(str_list):
 
 again = 'y'
 while again == 'y':
-    com = random.randint(1, 100)
+    com = random.randint(1, 99)
     current_time = 0
     total_time += 1
     ave_time = ave_list(user_time_list)
