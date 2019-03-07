@@ -1,7 +1,7 @@
 import random
 
 score_db = {}
-with open('e:/github/python_learning/txt/guess_score.txt') as scores:
+with open('txt/guess_score.txt') as scores:
     for line in scores.readlines():
         if line[-1] == '\n':
             line = line.replace('\n', '')  # remove \n from every lines
@@ -9,7 +9,7 @@ with open('e:/github/python_learning/txt/guess_score.txt') as scores:
         score_db[line[0]] = line[1:]
 
 times_db = {}
-with open('e:/github/python_learning/txt/guess_times.txt') as times:
+with open('txt/guess_times.txt') as times:
     for user_time in times.readlines():
         if user_time[-1] == '\n':
             user_time = user_time.replace('\n', '')  # remove \n from every lines
@@ -34,13 +34,13 @@ user_time_list = times_db[user_name]
 
 
 def ave_list(str_list):
-    sum = 0
+    sum_time = 0
     if len(str_list) == 0:  # in case of new user's time list is empty
         ave = 0
     else:
         for i in str_list:
-            sum += int(i)
-        ave = sum/len(str_list)
+            sum_time += int(i)
+        ave = sum_time/len(str_list)
     return ave
 
 
@@ -49,6 +49,14 @@ def list_min(str_list):
     for i in str_list:
         min_list.append(int(i))
     return min(min_list)
+
+
+def input_num():
+    user_input = input('Guess what i think:')
+    while not user_input.isdigit():
+        print('It looks your input is not a number...,')
+        user_input = input('Guess what i think:')
+    return user_input
 
 
 again = 'y'
@@ -62,7 +70,7 @@ while again == 'y':
     print('Your average success time is %.2f and shortest success time is %d.' % (ave_time, min_time))
     for i in range(1, 9):
         if i < 8:
-            ans = eval(input('Guess what i think:'))
+            ans = int(input_num())
             if ans < com:
                 print('The number is too small.')
                 print('You already try for %d times,%d times remaining.' % (i, 8-i))
@@ -101,7 +109,7 @@ for name in score_db:
     score_final += name + ' ' + ' '.join(score_db[name]) + '\n'
 for names in times_db:
     times_final += names + ' ' + ' '.join(times_db[names]) + '\n'
-with open('e:/github/python_learning/txt/guess_score.txt', 'w') as score_result:
+with open('txt/guess_score.txt', 'w') as score_result:
     score_result.write(score_final)
-with open('e:/github/python_learning/txt/guess_times.txt', 'w') as times_result:
+with open('txt/guess_times.txt', 'w') as times_result:
     times_result.write(times_final)
