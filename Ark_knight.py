@@ -25,31 +25,81 @@ gem = int(input('How many GEMs you want to use:'))
 print('Please get game window ready!')
 print('The process will start after 5 Secs.')
 time.sleep(5)
+battle_count = 0
 while gem != 0:
+    prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
+    prts_box = (2118, 1333, 2148, 1357)  # confirm PRTS option is checked
+    prts_p = ImageGrab.grab(prts_box)
+    prts_p.save('D:/Arknights/PIC/prts_p.jpg')
+    print('start process PRTS window')
+    if equal_im(prts_p, prts_im) is False:
+        print('PRTS image is not same')
+        mouse.move(1070, 670)
+        mouse.click(button='left')
+        time.sleep(3)
+    else:
+        print('PRTS image is same')
+
+    start_im = Image.open('D:/Arknights/PIC/start.jpg')
+    start_box = (2530, 260, 2540, 270)
+    start_p = ImageGrab.grab(start_box)
+    start_p.save('D:/Arknights/PIC/start_p.jpg')
+    print('start process Start window')
+    if equal_im(start_p, start_im) is True:
+        print('Start image is same')
+        mouse.move(1100, 720)
+        mouse.click(button='left')
+        time.sleep(3)
+    else:
+        print('Start image is not same')
+        break
+
     gem_im = Image.open('D:/Arknights/PIC/gem.jpg')
-    box = (0, 0, 0, 0)  # confirm GEM window or not
-    gem_p = ImageGrab.grab(box)
+    gem_box = (2160, 1205, 2175, 1220)
+    gem_p = ImageGrab.grab(gem_box)
     gem_p.save('D:/Arknights/PIC/gem_p.jpg')
+    print('Start process Gem window')
     if equal_im(gem_p, gem_im) is True:
-        mouse.move(0,0)
+        print('Gem image is same.')
+        mouse.move(1082, 610)
         mouse.click(button='left')
         gem = gem - 1
         time.sleep(2)
-
-    else:
-
-
-    prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
-    time.sleep(5)
-    box = (2118, 1248, 2149, 1279)  # confirm PRTS option is checked
-    prts_p = ImageGrab.grab(box)
-    prts_p.save('D:/Arknights/PIC/prts_p.jpg')
-    if equal_im(prts_p, prts_im) is False:
-        mouse.move(1070, 630)
+        mouse.move(1100, 720)
         mouse.click(button='left')
-        print(equal_im(prts, prts_im))
+        time.sleep(2)
+
+    team_im = Image.open('D:/Arknights/PIC/team.jpg')
+    team_box = (2300, 820, 2320, 840)
+    team_p = ImageGrab.grab(team_box)
+    team_p.save('D:/Arknights/PIC/team_p.jpg')
+    print('start process team window')
+    if equal_im(team_p, team_im) is True:
+        print('team image is same')
+        mouse.move(1100, 520)
+        mouse.click(button='left')
+        time.sleep(3)
     else:
-        mouse.move(mouse_p[0], mouse_p[1] + 60)
+        print('team image is not same')
+        break
+
+    result_im = Image.open('D:/Arknights/PIC/result.jpg')
+    result_box = (115, 1480, 120, 1485)
+    result_p = ImageGrab.grab(result_box)
+    result_p.save('D:/Arknights/PIC/result_p.jpg')
+    print('start process battle window')
+    while equal_im(result_p, result_im) is False:
+        print('result image is not same')
+        result_p = ImageGrab.grab(result_box)
+        time.sleep(4)
+    print('result image is same')
+    mouse.move(980, 560)
+    mouse.click(button='left')
+    battle_count += 1
+    time.sleep(5)
+
+print('Work is done, battle number is:', battle_count)
+
 
 
 

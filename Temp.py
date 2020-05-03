@@ -25,15 +25,13 @@ gem = int(input('How many GEMs you want to use:'))
 print('Please get game window ready!')
 print('The process will start after 5 Secs.')
 time.sleep(5)
-
-        prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
-        time.sleep(5)
-        box = (2118, 1248, 2149, 1279)  # confirm PRTS option is checked
-        prts_p = ImageGrab.grab(box)
-        prts_p.save('D:/Arknights/PIC/prts_p.jpg')
-        if equal_im(prts_p, prts_im) is False:
-            mouse.move(1070, 630)
-            mouse.click(button='left')
-            print(equal_im(prts, prts_im))
-        else:
-            mouse.move(mouse_p[0], mouse_p[1] + 60)
+prts_im = Image.open('D:/Arknights/PIC/gem.jpg')
+box = (2118, 1333, 2148, 1357)
+prts_p = ImageGrab.grab(box)
+prts_p.save('D:/Arknights/PIC/gem_p.jpg')
+if equal_im(prts_p, prts_im) is False:
+    mouse.move(1070, 670)
+    mouse.click(button='left')
+    print(equal_im(prts_p, prts_im))
+else:
+    mouse.move(1100, 735)
