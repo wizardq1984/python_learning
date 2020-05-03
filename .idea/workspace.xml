@@ -31,7 +31,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Guess_number">
+  <component name="RunManager" selected="Python.Temp">
     <configuration name="Ark_knight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +95,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Temp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python_learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,34 +137,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="top_medal" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="python_learning" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/top_medal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Guess_number" />
-        <item itemvalue="Python.Ark_knight" />
+        <item itemvalue="Python.Temp" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.Ark_knight" />
+        <item itemvalue="Python.Guess_number" />
         <item itemvalue="Python.Game_TicTacToe" />
-        <item itemvalue="Python.top_medal" />
       </list>
     </recent_temporary>
   </component>
@@ -179,22 +179,26 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="233" y="39" key="#Notifications/0.0.1280.760@0.0.1280.760" timestamp="1586331730394" />
-    <state width="1260" height="167" key="GridCell.Tab.0.bottom" timestamp="1587361032061">
+    <state width="1260" height="167" key="GridCell.Tab.0.bottom" timestamp="1588170870233">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1587361032061" />
-    <state width="1260" height="167" key="GridCell.Tab.0.center" timestamp="1587361032061">
+    <state width="1260" height="167" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1588170870233" />
+    <state width="1896" height="167" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587472643377" />
+    <state width="1260" height="167" key="GridCell.Tab.0.center" timestamp="1588170870233">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1587361032061" />
-    <state width="1260" height="167" key="GridCell.Tab.0.left" timestamp="1587361032061">
+    <state width="1260" height="167" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1588170870233" />
+    <state width="1896" height="167" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587472643377" />
+    <state width="1260" height="167" key="GridCell.Tab.0.left" timestamp="1588170870233">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1587361032061" />
-    <state width="1260" height="167" key="GridCell.Tab.0.right" timestamp="1587361032061">
+    <state width="1260" height="167" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1588170870233" />
+    <state width="1896" height="167" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587472643377" />
+    <state width="1260" height="167" key="GridCell.Tab.0.right" timestamp="1588170870233">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="167" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1587361032061" />
+    <state width="1260" height="167" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1588170870233" />
+    <state width="1896" height="167" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587472643377" />
     <state x="143" y="23" key="SettingsEditor" timestamp="1586331841100">
       <screen x="0" y="0" width="1280" height="760" />
     </state>

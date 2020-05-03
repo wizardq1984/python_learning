@@ -1,3 +1,10 @@
+from PIL import Image
 import time
-a = time.time()
-print(a)
+import mouse
+
+print('Get ready will start after 5 Secs')
+time.sleep(5)
+print('before', mouse.get_position())
+time.sleep(2)
+print('after', mouse.get_position())
+
