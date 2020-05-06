@@ -26,7 +26,8 @@ print('Please get game window ready!')
 print('The process will start after 5 Secs.')
 time.sleep(5)
 battle_count = 0
-while gem != 0:
+
+while True:
     prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
     prts_box = (2118, 1333, 2148, 1357)  # confirm PRTS option is checked
     prts_p = ImageGrab.grab(prts_box)
@@ -59,15 +60,18 @@ while gem != 0:
     gem_p = ImageGrab.grab(gem_box)
     gem_p.save('D:/Arknights/PIC/gem_p.jpg')
     print('Start process Gem window')
-    if equal_im(gem_p, gem_im) is True:
+    if equal_im(gem_p, gem_im) is True and gem != 0:
         print('Gem image is same.')
         mouse.move(1082, 610)
         mouse.click(button='left')
-        gem = gem - 1
+        gem -= 1
         time.sleep(2)
         mouse.move(1100, 720)
         mouse.click(button='left')
         time.sleep(2)
+    elif equal_im(gem_p, gem_im) is True and gem == 0:
+        print('Gem = 0, end of whole process.')
+        break
 
     team_im = Image.open('D:/Arknights/PIC/team.jpg')
     team_box = (2300, 820, 2320, 840)
