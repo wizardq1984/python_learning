@@ -102,7 +102,7 @@ while True:
     battle_count += 1
     time.sleep(5)
 
-print('Work is done, battle number is:', battle_count)
+print('Work is done, battle count is:', battle_count)
 
 
 
