@@ -92,13 +92,23 @@ while True:
     result_p = ImageGrab.grab(result_box)
     result_p.save('D:/Arknights/PIC/result_p.jpg')
     print('start process battle window')
-    while equal_im(result_p, result_im) is False:
+    grab_time = 0
+    while equal_im(result_p, result_im) is False and grab_time < 40:
         print('result image is not same')
         result_p = ImageGrab.grab(result_box)
+        grab_time += 1
+        print('grab_time is: ', grab_time)
         time.sleep(4)
-    print('result image is same')
-    mouse.move(980, 560)
-    mouse.click(button='left')
+    if equal_im(result_p, result_im) is True:
+        print('result image is same')
+        mouse.move(580, 770)
+        mouse.click(button='left')
+    else:
+        print('battle is more than 2 min.')
+        mouse.move(580, 770)
+        mouse.click(button='left')
+        time.sleep(2)
+        mouse.click(button='left')
     battle_count += 1
     time.sleep(5)
 
