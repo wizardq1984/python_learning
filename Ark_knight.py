@@ -1,5 +1,6 @@
 import mouse
 import time
+import os
 from PIL import Image
 from PIL import ImageGrab
 
@@ -28,18 +29,18 @@ time.sleep(5)
 battle_count = 0
 
 while True:
-    prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
-    prts_box = (2118, 1333, 2148, 1357)  # confirm PRTS option is checked
-    prts_p = ImageGrab.grab(prts_box)
-    prts_p.save('D:/Arknights/PIC/prts_p.jpg')
-    print('start process PRTS window')
-    if equal_im(prts_p, prts_im) is False:
-        print('PRTS image is not same')
-        mouse.move(1070, 670)
-        mouse.click(button='left')
-        time.sleep(3)
-    else:
-        print('PRTS image is same')
+    # prts_im = Image.open('D:/Arknights/PIC/prts.jpg')
+    # prts_box = (2118, 1333, 2148, 1357)  # confirm PRTS option is checked
+    # prts_p = ImageGrab.grab(prts_box)
+    # prts_p.save('D:/Arknights/PIC/prts_p.jpg')
+    # print('start process PRTS window')
+    # if equal_im(prts_p, prts_im) is False:
+    #     print('PRTS image is not same')
+    #     mouse.move(1070, 670)
+    #     mouse.click(button='left')
+    #     time.sleep(4)
+    # else:
+    #     print('PRTS image is same')
 
     start_im = Image.open('D:/Arknights/PIC/start.jpg')
     start_box = (2530, 260, 2540, 270)
@@ -50,10 +51,12 @@ while True:
         print('Start image is same')
         mouse.move(1100, 720)
         mouse.click(button='left')
-        time.sleep(3)
+        time.sleep(4)
     else:
         print('Start image is not same')
-        break
+        mouse.move(1100, 720)
+        mouse.click(button='left')
+        time.sleep(4)
 
     gem_im = Image.open('D:/Arknights/PIC/gem.jpg')
     gem_box = (2160, 1205, 2175, 1220)
@@ -65,10 +68,10 @@ while True:
         mouse.move(1082, 610)
         mouse.click(button='left')
         gem -= 1
-        time.sleep(2)
+        time.sleep(4)
         mouse.move(1100, 720)
         mouse.click(button='left')
-        time.sleep(2)
+        time.sleep(6)
     elif equal_im(gem_p, gem_im) is True and gem == 0:
         print('Gem = 0, end of whole process.')
         break
@@ -82,10 +85,14 @@ while True:
         print('team image is same')
         mouse.move(1100, 520)
         mouse.click(button='left')
-        time.sleep(3)
+        time.sleep(4)
     else:
         print('team image is not same')
-        break
+        team_e = ImageGrab.grab()
+        team_e.save('D:/Arknights/PIC/team_e.jpg')
+        mouse.move(1100, 520)
+        mouse.click(button='left')
+        time.sleep(4)
 
     result_im = Image.open('D:/Arknights/PIC/result.jpg')
     result_box = (115, 1480, 120, 1485)
@@ -98,7 +105,7 @@ while True:
         result_p = ImageGrab.grab(result_box)
         grab_time += 1
         print('grab_time is: ', grab_time)
-        time.sleep(4)
+        time.sleep(5)
     if equal_im(result_p, result_im) is True:
         print('result image is same')
         mouse.move(580, 770)
@@ -107,12 +114,15 @@ while True:
         print('battle is more than 2 min.')
         mouse.move(580, 770)
         mouse.click(button='left')
-        time.sleep(2)
+        time.sleep(3)
         mouse.click(button='left')
     battle_count += 1
-    time.sleep(5)
+    time.sleep(6)
 
 print('Work is done, battle count is:', battle_count)
+os.system(command='taskkill /F /IM NemuPlayer.exe')
+os.system(command='taskkill /F /IM NemuHeadless.exe')
+os.system(command='taskkill /F /IM NemuService.exe')
 
 
 

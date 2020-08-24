@@ -1,10 +1,5 @@
-from PIL import Image
-import time
-import mouse
-
-print('Get ready will start after 5 Secs')
-time.sleep(5)
-print('before', mouse.get_position())
-time.sleep(2)
-print('after', mouse.get_position())
-
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+if 11 not in l:
+    print('11 is not in list l')
+else:
+    print('error')
