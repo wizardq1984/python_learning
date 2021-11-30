@@ -120,10 +120,11 @@ while True:
     time.sleep(6)
 
 print('Work is done, battle count is:', battle_count)
-os.system(command='taskkill /F /IM NemuPlayer.exe')
-os.system(command='taskkill /F /IM NemuHeadless.exe')
-os.system(command='taskkill /F /IM NemuService.exe')
-
+os.system(command='taskkill /F /IM NebulaPlayer.exe')
+os.system(command='taskkill /F /IM Nebula.exe')
+os.system(command='taskkill /F /IM mumu3-service.exe')
+os.system(command='taskkill /F /IM mumu3.exe')
+os.system(command='taskkill /F /IM mumu3-renderer.exe')
 
 
 

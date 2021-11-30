@@ -174,30 +174,4 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
   </component>
-  <component name="WindowStateProjectService">
-    <state width="630" height="174" key="GridCell.Tab.0.bottom" timestamp="1598253744003">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="630" height="174" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1598253744003" />
-    <state width="941" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597979380567" />
-    <state width="630" height="174" key="GridCell.Tab.0.center" timestamp="1598253744003">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="630" height="174" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1598253744003" />
-    <state width="941" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597979380567" />
-    <state width="630" height="174" key="GridCell.Tab.0.left" timestamp="1598253744003">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="630" height="174" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1598253744003" />
-    <state width="941" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597979380567" />
-    <state width="630" height="174" key="GridCell.Tab.0.right" timestamp="1598253744003">
-      <screen x="0" y="0" width="1280" height="760" />
-    </state>
-    <state width="630" height="174" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1598253744003" />
-    <state width="941" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597979380567" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1597970838115">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597970838115" />
-  </component>
 </project>
