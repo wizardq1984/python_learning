@@ -123,8 +123,3 @@ print('Work is done, battle count is:', battle_count)
 os.system(command='taskkill /F /IM NemuPlayer.exe')
 os.system(command='taskkill /F /IM NemuHeadless.exe')
 os.system(command='taskkill /F /IM NemuService.exe')
-
-
-
-
-
